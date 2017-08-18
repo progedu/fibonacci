@@ -11,7 +11,7 @@ function trib(n) {
     memo.set(n, value);
     return value;
 }
-const length = 10000;
+const length = 40;
 for (let i = 0; i <= length; i++) {
     console.log(trib(i));
 }
