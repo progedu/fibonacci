@@ -14,6 +14,7 @@ for(let i=0; i<= length; i++){
 }
 
 /**
- * Exponential order
+ * Exponential-order
  * 40 loops , user    0m5.076s
+ * 50 loops , user    12m27.312s
  */
