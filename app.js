@@ -26,7 +26,7 @@ function tri(n){
     memo.set(n, value);
     return value;
 }
-const length = 10;
+const length = 30;
 for(let i=0; i<=length; i++){
     //console.log(fib(i));
     console.log('n=' + i + '    ' + tri(i));
