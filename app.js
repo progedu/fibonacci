@@ -1,15 +1,15 @@
 'use strict';
-function fib(n){
-    if(n === 0){
-        return 0;
-    } else if (n === 1){
-        return 1;
+function fib() {
+    let array = [0, 1];
+    const length = 1000;
+    for (let i = 0; i <= length; i++) {
+        array.push(array[i] + array[i + 1]);
     }
-    return fib(n -1) + fib(n -2);
+    return (array[length]);
 }
 
-const length = 40;
-for (let i = 0 ; i <= length ; i++){
-    console.log(fib(i));
-}
+console.log(fib());
+
+
+
 
