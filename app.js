@@ -3,7 +3,7 @@
 const memo = new Map();
 memo.set(0,0);
 memo.set(1,0);
-memo.set(2,1)
+memo.set(2,1);
 
 function fib(n){
     //key値の有無判定
