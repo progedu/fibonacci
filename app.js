@@ -1,13 +1,18 @@
 'use strict';
+//memo化でアルゴリズム改善
+const memo = new Map();
+memo.set(0,0);
+memo.set(1,1);
+
 function fib(n){
-    if (n === 0){
-        return 0;
+    //key値の有無判定
+    if (memo.has(n)){
+        return memo.get(n);
     }
-    else if (n === 1){
-        return 1;
-    }
-    //最初のfib(0),fib(1)を定義しておけば、後は再帰するだけで勝手に計算してくれる
-    return fib(n - 1) + fib(n - 2);
+    //key値が無ければ計算して、Mapに値をSetする
+    const value = fib(n - 1) + fib(n - 2);
+    memo.set(n,value);
+    return value;  
 }
 const length = 40;
 for (let i = 0;i<=length;i++){
