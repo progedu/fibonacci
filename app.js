@@ -1,8 +1,9 @@
 'use strict';
-//memo化でアルゴリズム改善
+//メモ化でアルゴリズム改善_トリボナッチ数列
 const memo = new Map();
 memo.set(0,0);
-memo.set(1,1);
+memo.set(1,0);
+memo.set(2,1)
 
 function fib(n){
     //key値の有無判定
@@ -10,7 +11,7 @@ function fib(n){
         return memo.get(n);
     }
     //key値が無ければ計算して、Mapに値をSetする
-    const value = fib(n - 1) + fib(n - 2);
+    const value = fib(n - 1) + fib(n - 2) + + fib(n - 3);
     memo.set(n,value);
     return value;  
 }
