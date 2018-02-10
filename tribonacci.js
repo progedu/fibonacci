@@ -1,17 +1,20 @@
 'use strict';
-const memo = new Map();
-memo.set(0, 0);
-memo.set(1, 1);
-memo.set(2, 1);
-function fib(n) {
-    if (memo.has(n)) {
-        return memo.get(n);
+function trib(n, meme) {
+    if (meme.has(n)) {
+        return meme.get(n);
     }
-    const value = fib(n - 1) + fib(n - 2) + fib(n - 3);
-    memo.set(n, value);
+    const value = trib(n - 1, meme) +
+                  trib(n - 2, meme) +
+                  trib(n - 3, meme);
+    meme.set(n, value);
     return value
 };
+
+const memo = new Map();
+memo.set(0, 0);
+memo.set(1, 0);
+memo.set(2, 1);
 const length = 40;
 for (let i = 0; i < length; i++) {
-    console.log(fib(i));
+    console.log(trib(i, memo));
 }
