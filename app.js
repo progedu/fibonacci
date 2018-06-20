@@ -3,7 +3,7 @@ const memo = new Map();
 memo.set(0, 0);
 memo.set(1, 0);
 memo.set(2, 1);
-function fib(n) {
+function torib(n) {
     if(memo.has(n)) {
         return memo.get(n);
     }
@@ -13,5 +13,5 @@ function fib(n) {
 }
 const length = 40;
 for (let i = 0; i <= length; i++) {
-    console.log(fib(i));
+    console.log(torib(i));
 }
