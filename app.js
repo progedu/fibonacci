@@ -7,7 +7,7 @@ function torib(n) {
     if(memo.has(n)) {
         return memo.get(n);
     }
-    const value = fib(n - 3) + fib(n - 2) + fib(n - 1);
+    const value = torib(n - 3) + torib(n - 2) + torib(n - 1);
     memo.set(n, value);
     return value;
 }
