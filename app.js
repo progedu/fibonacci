@@ -5,10 +5,10 @@ memo.set(1,1);
 function fib (n){
      if (memo.has(n)){ //値があるか？
          return memo.get(n);//あったら返す
-          } //躁じゃない場合は
+          } //そうじゃない場合は以下の計算式に
           const value= fib(n - 1) + fib(n - 2);
 
-          memo.set(n,value);//nはvalueでした
+          memo.set(n,value);//nにvalue代入
           return value;
 }
 const length = 40;
