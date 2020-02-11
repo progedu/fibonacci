@@ -5,5 +5,5 @@ function fib(n) {
   } else if (n === 1) {
     return 1;
   }
-  return null;
+  return fib(n - 1) + fib(n - 2);
 }
