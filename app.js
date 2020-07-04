@@ -1,19 +1,19 @@
 'use strict';
 
-function fibonacci(n) {
-  var fiboMap = new Map();
-  for (let i = 0; i <= n; i++) {
-    if(i == 0){
-      fiboMap.set(0, 0);
-    }else if(i == 1){
-      fiboMap.set(1, 1);
-    }else{
-      fiboMap.set(i, fiboMap.get(i-1) + fiboMap.get(i-2));
-    }
+const memo = new Map();
+memo.set(0, 0);
+memo.set(1, 1);
+
+function fib(n) {
+  if(memo.has(n)){
+    return memo.get(n);
   }
-  return fiboMap.get(n);
+  const value = fib(n - 1) + fib(n - 2);
+  memo.set(n, value);
+  return value;
 }
 
-for (let i = 0; i <= 40; i++) {
-  console.log(fibonacci(i));
+const length = 40;
+for (let i = 0; i <= length; i++) {
+  console.log(fib(i));
 }
