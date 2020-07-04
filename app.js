@@ -1,15 +1,19 @@
 'use strict';
 
-// 0のときは0を返す
 function fibonacci(n) {
-  if(n == 0){
-    return 0;
-  }else if(n == 1){
-    return 1;
+  var fiboMap = new Map();
+  for (let i = 0; i <= n; i++) {
+    if(i == 0){
+      fiboMap.set(0, 0);
+    }else if(i == 1){
+      fiboMap.set(1, 1);
+    }else{
+      fiboMap.set(i, fiboMap.get(i-1) + fiboMap.get(i-2));
+    }
   }
-  return fibonacci(n-1) + fibonacci(n-2);
+  return fiboMap.get(n);
 }
 
-for (var i = 0; i <= 40; i++) {
+for (let i = 0; i <= 40; i++) {
   console.log(fibonacci(i));
 }
