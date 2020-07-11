@@ -4,14 +4,15 @@ const memo = new Map();
 
 memo.set(0, 0);
 memo.set(1, 1);
+memo.set(2, 1);
 
-function fib(n) {
+function trib(n) {
 
   if (memo.has(n)) {
     return memo.get(n);
   }
 
-  const value = fib(n - 1) + fib(n - 2);
+  const value = trib(n - 1) + trib(n - 2) + trib(n - 3);
 
   memo.set(n, value);
 
@@ -20,5 +21,5 @@ function fib(n) {
 
 const length = 40;
 for (let i = 0; i <= length; i++) {
-  console.log(fib(i));
+  console.log(trib(i));
 }
