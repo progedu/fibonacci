@@ -23,13 +23,10 @@
 }
 console.log(fib(40)); */
 
-var data = new Map();
+// 再帰を使ったフィボナッチ
+/* var data = new Map();
 data.set(0, 0);
 data.set(1, 1);
-/**
- * @param {number} n 
- * @returns {number}
- */
 function fib(n) {
     if ( data.has(n) ) {
         return data.get(n)
@@ -38,4 +35,21 @@ function fib(n) {
     data.set(n, value);
     return value
 }
-console.log( fib(process.argv[2]) );
+console.log( fib(process.argv[2]) ); */
+
+// トリボナッチ数列
+var data = new Map();
+data.set(0, 0);
+data.set(1, 0);
+data.set(2, 1);
+function trib(n) {
+    if ( data.has(n) ) {
+        return data.get(n)
+    }
+    const value = trib(n-1)+trib(n-2)+trib(n-3);
+    data.set(n, value);
+    return value
+}
+for (let i = 0; i <= process.argv[2]; i++) {
+    console.log(trib(i));
+}
